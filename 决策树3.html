@@ -1,0 +1,653 @@
+<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" >
+<link href="./icheck-1.x/skins/all.css" rel="stylesheet">
+<style>
+        .border-none {
+            border: none !important;
+        }        
+        .border-top-visible {
+            border-style: solid !important;
+            border-width: 2px 0px 0px 0px !important;
+        }
+		.border-top-right-visible {
+            border-style: solid !important;
+            border-width: 2px 2px 0px 0px !important;
+        }
+		.border-top-left-visible {
+            border-style: solid !important;
+            border-width: 2px 0px 0px 2px !important;
+        }
+		table{
+			table-layout:fixed;
+			empty-cells:show; 
+			border-collapse: collapse;
+			margin:0 auto;
+		}
+		.border{
+			border:2px solid ;
+		}
+		
+		td,th{
+			height:30px;
+		}
+		.title{
+			height:20px;
+			color:#fff;
+			background:gray;
+		}
+		.cell-content{
+			width:250px;
+		}
+		.cell-line{
+			width:10px;
+		}
+		.align-center{
+			text-align:center;			
+		}
+		.relative{
+			position:relative;
+		}
+		.absolute{
+			position:absolute;
+		}
+		.padding5{
+			padding:5px;
+		}
+		
+    </style>
+<script src="./scripts/jquery-1.10.2.min.js"></script>
+<script src="./scripts/handlebars-v4.0.11.js"></script>
+<script src="./scripts/handlebarsExtend.js"></script>
+<script src="./icheck-1.x/icheck.min.js"></script>
+<script src="./scripts/autoline.js"></script>
+
+
+<table class="table ">
+			<thead class="title align-center">
+				<tr>
+				  <th colspan="9">标题</th>				  
+				</tr>
+			</thead>
+			<tbody>	
+				<tr class="align-center">
+					<td><div class="border">Findings</div></td>
+					<td colspan="3"></td>
+					<td><div class="border">Syndromes</div></td>
+					<td colspan="3"></td>
+					<td><div class="border">Emergency Actions</div></td>
+				</tr>
+				<tr class="align-center">
+					<td colspan="9"></td>
+				</tr>                
+					<tr>
+						<td class="border-none cell-content relative" >
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:red;" class="absolute margin-top-halftd border  findings" data-from-group="action1">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>interarm variation in pulse/BP</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line" ></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+						</td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:red;" class="absolute margin-top-halftd border  findings" data-from-group="action1">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>CXR:Wide mediastinum </span>
+									</div>	
+								<div>
+								
+								
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;background-color:gray;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="action2" data-to-group="action1">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Aortic dissection</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:blue;" class="absolute margin-top-halftd border  actions " data-to-group="action2">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Beta Blockers</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action1">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>CXR:pleural effusion </span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action2">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Surgery consult</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action1">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>US/CT:Dissection</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+						</td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+						</td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Trauma center</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+						</td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Surgery consult</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Mechanism (blunt/penetrating)</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>IV access</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>ime (trauma time)</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;background-color:gray;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="action4" data-to-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Hemorrhage</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Hemostasis</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Ijury locations </span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;background-color:gray;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="action4" data-to-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Shock</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Fluid therapy</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action3">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>External bleeding</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Transfusion</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+						</td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+								<!-- <span style="font-size: 6px;float: right; margin: -20px -2px 0 0;"><i class="fa fa-chevron-right"></i></span> -->
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action4">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Tranexamic acid</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+						</td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;border:none;margin-top:-10px;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="" data-to-group="">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+																			
+									</div>
+									<div style="display:inline;">
+										<span>Regardless of any syndrome, consider:</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:blue;" class="absolute margin-top-halftd border  actions " data-to-group="action5">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>NIMV</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action5">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Increased work of breathing</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="3">
+						</td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:blue;" class="absolute margin-top-halftd border  actions " data-to-group="action5">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Intubation</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+						</td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:blue;" class="absolute margin-top-halftd border  actions " data-to-group="action5">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Tracheostomy</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action6">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Foreign body</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>
+					
+						<td class="border-none cell-line "></td>
+											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="1">
+						</td>
+						<td class="border-none cell-line "></td>
+						
+							<td class="border-none cell-line "></td>
+						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+						</td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action6,action7">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Stridor</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:red;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="action8" data-to-group="action6">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Airway obstruction</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action8">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Bronchodilator</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+					</tr><tr>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  findings" data-from-group="action7">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<i class="fa fa-circle"></i>									
+									</div>
+									<div style="display:inline;">
+										<span>Angioedema</span>
+									</div>	
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line"></td>					
+						<td class="border-none cell-line "></td>											
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative" syndrometype="0">
+								<div style="width:100%;height:80%;margin-left:-3px;border-color:red;;margin-top:0px;" class="absolute margin-top-halftd border syndromes" data-from-group="action9" data-to-group="action7">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Anaphylaxis</span>
+									</div>									
+								<div>
+						</div></div></td>
+						<td class="border-none cell-line "></td>						
+							<td class="border-none cell-line "></td>						
+						<td class="border-none cell-line ">
+						</td>
+						<td class="border-none cell-content relative">
+								<div style="width:100%;height:80%;margin-left:-3px;" class="absolute margin-top-halftd border  actions " data-to-group="action9">
+									<div style="width:30px;display:inline;margin-left: 5px;">
+										<div class="icheckbox_minimal" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>									
+									</div>
+									<div style="display:inline;">
+										<span>Epinephrine</span>
+									</div>	
+								<div>
+						</div></div></td>
+					</tr><tr>					
+              
+			</tr></tbody>
+        </table>
+<script>
+$(function(){
+	autoline.render({});
+});
+</script>
